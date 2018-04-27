@@ -1,0 +1,37 @@
+VC EF中Attach和Entry区别
+EF:加入容器三种方式-->查询,attach,entry.不在容器里,不能用remove,add等方法.
+1.0 使用Attach可能会出错.//attach 意思:附上; 贴上，系;
+var db = new PhoneBookEntities();
+var queryCi=db.ContactInfo.FirstOrDefault(c => c.ID == 10);//使EF容器中存在代理类,状态Unchanged
+ContactInfo ci=new ContactInfo(){ID=10};
+db.ContactInfo.Attach(ci);
+附加类型“MyMvc.Models.ContactInfo”的实体失败，因为相同类型的其他实体已具有相同的主键值。
+容器中已存在该实体对象的代理类,而Attach方法却要把代理类的状态设置为Unchanged,可能与原代理类的状态冲突,所以报错.
+var db = new PhoneBookEntities();
+var queryCi=db.ContactInfo.FirstOrDefault(c => c.ID == 10);
+db.ContactInfo.Attach(queryCi);//原代理类状态是Unchanged,Attach方法也是把代理类的状态设置为Unchanged,不冲突. 
+这么写不会报错.不过是没意义的写法.
+2.0 Entry方法返回实体对象的代理类,Attach方法返回实体对象
+ContactInfo c1 = db.ContactInfo.FirstOrDefault(c => c.ID == 10);
+DbEntityEntry<ContactInfo> x1 = db.Entry(c1);
+ContactInfo x2 = db.ContactInfo.Attach(c1);
+3.0 如果某个实体对象在EF容器中已有代理类,用Entry方法也不会报错,返回代理类而已,state不变.
+如果用Entry方法前,state=Unchanged,那么,返回的代理类的state也是Unchanged;
+如果用Entry方法前,state=Deleted,那么,返回的代理类的state也是Deleted.
+var db = new PhoneBookEntities();
+ContactInfo ci = db.ContactInfo.FirstOrDefault(c => c.ID == 10);
+var c1 = db.ContactInfo.Remove(ci);
+string sC1 = db.Entry(ci).State.ToString();//Deleted
+var c2 = db.ContactInfo.Attach(ci);
+string sc2 = db.Entry(ci).State.ToString();//Attach方法把代理类状态从Deleted变为Unchanged.
+小结,为了避免使用Attach方法而报错,尽量少用Attach方法或者Attach已经查询过的容器中已有的对象
+4.0 如果一个实体对象在容器中不存在,那么Entry方法拿到的代理类的状态是Detached.
+再经过Attach方法,代理类的状态变为Unchanged.
+var db = new PhoneBookEntities();
+var ci = new ContactInfo() {ID = 10};
+var state= db.Entry(ci).State.ToString();//Detached:此状态表示未附加,db.SaveChanges();不会影响到这个实体对象.
+db.ContactInfo.Attach(ci);
+state = db.Entry(ci).State.ToString();//Unchanged
+Detached状态表示EF容器不会跟踪实体对象的变化,EF性能更好.
+什么时候用?展示数据的时候使用.
+使用方法,例如:db.ContactInfo.AsNoTracking().Where(c=>c.ID>2);
