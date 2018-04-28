@@ -1,0 +1,13 @@
+
+涉及领域驱动设计，mvc ,api
+https://www.cnblogs.com/softidea/p/7257910.html
+
+领域驱动设计
+https://www.cnblogs.com/netfocus/p/5548025.html
+https://www.cnblogs.com/Profound/p/7458945.html
+
+
+
+https://docs.microsoft.com/zh-cn/xamarin/#pivot=tools
+
+http://www.cnblogs.com/yc-755909659/tag/MVC%204/
