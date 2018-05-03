@@ -10,7 +10,7 @@ namespace MyProject.Web.Host.Startup
             //BuildWebHost(args).Run();
             InitWebHost(args).Run();
         }
-
+        // ?? 防止EF Core调用Program.BuildWebHost()重命名BuildWebHost
         //  public static IWebHost BuildWebHost(string[] args)
         public static IWebHost InitWebHost(string[] args)
         {
