@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace MyProject.Student
 {
-    public class StudentRepository : MyProjectRepositoryBase<Student>
-    {
+    //public class StudentRepository : MyProjectRepositoryBase<Student>
+    //{
 
 
-    }
+    //}
 }
