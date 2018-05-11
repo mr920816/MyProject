@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace MyProject
 {
-    public class MyProjectRepositoryBase<TPrimaryKey> : Repository<TPrimaryKey>
-    {
-        // 仓储类基类
+    //public class MyProjectRepositoryBase<TPrimaryKey> : Repository<TPrimaryKey>
+    //{
+    //    // 仓储类基类
 
 
 
-    }
+    //}
 }

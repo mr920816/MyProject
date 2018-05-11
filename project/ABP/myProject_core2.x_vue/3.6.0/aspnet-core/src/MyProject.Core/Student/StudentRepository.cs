@@ -8,5 +8,7 @@ namespace MyProject.Student
 {
     public class StudentRepository : MyProjectRepositoryBase<Student>
     {
+
+
     }
 }
