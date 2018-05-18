@@ -6,6 +6,8 @@ namespace ConsoleApp
 {
     class Program
     {
+
+
         static void Main(string[] args)
         {
             student_a entity1 = new student_a();
@@ -54,7 +56,20 @@ namespace ConsoleApp
 
             #endregion
 
+            // 参数委托约束
+            if (6 > 3)
+            {
 
+                var map = Test2.EnumNameValues<RainBow>();
+
+                foreach (var pair in map)
+                    Console.WriteLine($"{pair.Key}:\t{pair.Value}");
+
+
+
+
+
+            }
 
 
             #endregion
@@ -90,7 +105,7 @@ namespace ConsoleApp
                 // Accessing the second field:
                 Console.WriteLine(xCoords.Item2);
             }
-            if (1> 3)
+            if (1 > 3)
             {
                 // The 'arity' and 'shape' of all these tuples are compatible. 
                 // The only difference is the field names being used.
@@ -99,9 +114,9 @@ namespace ConsoleApp
                 var named = (Answer: 42, Message: "The meaning of life");
                 var differentNamed = (SecretConstant: 42, Label: "The meaning of life 123456");
 
-               
+
                 unnamed = named;
-               //  Console.WriteLine($"{unnamed.Item1}, {unnamed.Message}");
+                //  Console.WriteLine($"{unnamed.Item1}, {unnamed.Message}");
 
                 named = unnamed;
                 // 'named' still has fields that can be referred to
@@ -124,29 +139,65 @@ namespace ConsoleApp
             #endregion
 
 
-            #region
+            #region 运算符
 
             if (1 > 3)
             {
 
                 string[] arrNum = { "zero", "one", "two", "three", "four", "five", "six", "seven" };
-             
-                var shortDig = arrNum.Where((a,index) => a.Length < index);
 
-                foreach ( var sd in shortDig)
+                var shortDig = arrNum.Where((a, index) => a.Length < index);
+
+                foreach (var sd in shortDig)
                 {
                     Console.WriteLine(sd);
                 }
 
             }
-             
 
-            #endregion 
+
+            #endregion
+
+
+
 
 
 
             Console.ReadLine();
 
         }
+
+
     }
+
+    public static class Test
+    {
+        //public static TDelegate TypeSafeCombine<TDelegate>(this TDelegate source, TDelegate target)
+        //   where TDelegate : System.Delegate
+        // => Delegate.Combine(source, target) as TDelegate;
+        //  https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/generics/constraints-on-type-parameters
+
+    }
+
+    enum RainBow
+    {
+        red,
+        orange,
+        yellow,
+        green,
+        blue
+    }
+    public static class Test2
+    {
+        public static Dictionary<int, string> EnumNameValues<T>() where T : System.Enum
+        {
+            var result = new Dictionary<int, string>();
+            var values = Enum.GetValues(typeof(T));
+
+            foreach (int item in values)
+                result.Add(item, Enum.GetName(typeof(T), item));
+            return result;
+        }
+    }
+
 }
