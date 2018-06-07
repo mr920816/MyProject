@@ -6,6 +6,20 @@ using System.Text;
 namespace ConsoleApp
 {
     #region 泛型接口
+    public class GenericListtt<T> : IEnumerable<T>
+
+    {
+        public IEnumerator<T> GetEnumerator()
+        {
+            throw new NotImplementedException();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            throw new NotImplementedException();
+        }
+    }
+
 
     /// <summary>
     ///  泛型接口
@@ -80,6 +94,8 @@ namespace ConsoleApp
                 swapped = false;
                 while (current.next != null)
                 {
+                    //  C3 b2 a1
+
                     if (current.Data.CompareTo(current.next.Data) > 0)
                     {
                         Node tmp = current.next;
@@ -107,6 +123,36 @@ namespace ConsoleApp
         }
 
     }
+
+    public class Person : System.IComparable<Person>
+    {
+        string name;
+        int age;
+
+        public Person(string s, int i)
+        {
+            name = s;
+            age = i;
+        }
+
+        // This will cause list elements to be sorted on age values.
+        public int CompareTo(Person p)
+        {
+            return age - p.age;  // 这边是减
+        }
+
+        public override string ToString()
+        {
+            return name + ":" + age;
+        }
+
+        // Must implement Equals.
+        public bool Equals(Person p)
+        {
+            return (this.age == p.age);
+        }
+    }
+
     #endregion
 
 
@@ -120,15 +166,15 @@ namespace ConsoleApp
         public int ID { get; set; }
     }
 
-    public class GenericList<T> where T : Employee
-    {
+    //public class GenericList<T> where T : Employee
+    //{
 
-        private class Node
-        {
+    //    private class Node
+    //    {
 
-        }
+    //    }
 
-    }
+    //}
 
 
 }
