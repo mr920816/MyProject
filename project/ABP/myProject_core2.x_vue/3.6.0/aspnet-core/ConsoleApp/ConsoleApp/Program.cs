@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleApp.Linq;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -11,6 +12,17 @@ namespace ConsoleApp
 
         static void Main(string[] args)
         {
+
+            // Linq
+            LinqExample ex = new LinqExample();
+            ex.LinqConsole();
+
+
+
+
+
+
+
             student_a entity1 = new student_a();
 
             #region 字段属性，抽象方法，虚方法
@@ -212,242 +224,7 @@ namespace ConsoleApp
 
             #endregion
 
-            #region Linq
-            if (1 > 3)
-            {
-
-                List<students> stl = new List<students>();
-                students stu = new students();
-                stu.id = 1;
-                stu.name = "aa,a";
-                stu.remark = "中国";
-                stl.Add(stu);
-
-                stu = new students();
-                stu.id = 2;
-                stu.name = "ab,b";
-                stu.remark = "啊打发";
-                stl.Add(stu);
-
-                stu = new students();
-                stu.id = 3;
-                stu.name = "ba,c";
-                stu.remark = "认我为";
-                stl.Add(stu);
-
-                stu = new students();
-                stu.id = 4;
-                stu.name = "bb,c";
-                stu.remark = "认我按时发为";
-                stl.Add(stu);
-
-                stu = new students();
-                stu.id = 2;
-                stu.name = "bc,b";
-                stu.remark = "而微软";
-                stl.Add(stu);
-
-
-
-                // group 
-                var group = from l in stl
-
-                            group l by l.name[0] into g
-
-                            orderby g.Key
-                            select g;
-
-                // let 
-                var let = from l in stl
-                          let frt = l.name.Split(",")[1]
-                          select frt;
-
-                // lookup
-                var quert = stl.ToLookup(n => n.id);
-
-
-
-
-            }
-            if (6 > 3)
-            {
-
-                #region 基础数据
-
-                List<scores> list = new List<scores>();
-                scores s1 = new scores(1, "语文", 11);
-                list.Add(s1);
-                scores s2 = new scores(2, "英语", 12);
-                list.Add(s2);
-                scores s3 = new scores(3, "数学", 13);
-                list.Add(s3);
-
-                List<scores> list1 = new List<scores>();
-                scores q1 = new scores(1, "语文", 21);
-                list1.Add(q1);
-                scores q2 = new scores(2, "英语", 22);
-                list1.Add(q2);
-                scores q3 = new scores(3, "数学", 23);
-                list1.Add(q3);
-
-                List<scores> list2 = new List<scores>();
-                scores w1 = new scores(1, "语文", 31);
-                list2.Add(w1);
-                scores w2 = new scores(2, "英语", 32);
-                list2.Add(w2);
-                scores w3 = new scores(3, "数学", 33);
-                list2.Add(w3);
-
-
-                List<scores> list3 = new List<scores>();
-                scores e1 = new scores(1, "语文", 41);
-                list3.Add(e1);
-                scores e2 = new scores(2, "英语", 42);
-                list3.Add(e2);
-                scores e3 = new scores(3, "数学", 43);
-                list3.Add(e3);
-
-
-                List<students> stl = new List<students>();
-                students stu = new students();
-                stu.id = 1;
-                stu.name = "aa,a";
-                stu.remark = "中国";
-                stu.scores = list;
-                stl.Add(stu);
-
-                stu = new students();
-                stu.id = 2;
-                stu.name = "ab,b";
-                stu.remark = "啊打发";
-
-                stu.scores = list1;
-                stl.Add(stu);
-
-                stu = new students();
-                stu.id = 3;
-                stu.name = "ba,c";
-                stu.remark = "认我为";
-                stu.scores = list2;
-                stl.Add(stu);
-
-                stu = new students();
-                stu.id = 4;
-                stu.name = "bb,c";
-                stu.remark = "认我按时发为";
-                stu.scores = list3;
-                stl.Add(stu);
-
-                #endregion
-
-
-                int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
-                int[] numbers1 = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
-                string[] arrNum = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
-
-
-                // index
-                var ex1 = arrNum.Where((d, index) => d.Length < index);
-                //foreach (var p in ex1)
-                //    Console.WriteLine(p);
-
-
-                // select-transformation 选择转化
-                var ex2 = from n in numbers
-                          select arrNum[n];
-                //foreach (var p in ex2)
-                //    Console.WriteLine(p);
-
-
-                // select-Anonymous types 匿名类型
-                var ex3 = from n in numbers
-                          select new { d = arrNum[n], even = (n % 2 == 0) };
-                //foreach (var p in ex3)
-                //    Console.WriteLine(p.d + " " + p.even);
-
-
-                // select - indexed
-                var ex4 = numbers.Select((n, index) => new { num = n, inPlace = (n == index) });
-                //foreach (var p in ex4)
-                //    Console.WriteLine(p.num + " " + p.inPlace);
-
-
-                // selectMany- compound from 1
-                var ex5 =
-                       from a in numbers
-                       from b in numbers1
-                       where a < b
-                       select new { a, b };
-                //foreach (var p in ex5)
-                //    Console.WriteLine(p.a + " " + p.b);
-
-                var ex6 =
-                  from a in numbers
-                  from b in numbers1
-                  where a < 2
-                  select new { a, b };
-                //foreach (var p in ex6)
-                //    Console.WriteLine(p.a + " " + p.b);
-
-
-                // selectMany - indexed  "custindex " +  custindex + " score " +
-                var ext7 = stl.SelectMany((cust, custindex) => cust.scores.Select(o => custindex + "  " + o.id + "  " + o.scoresName + "  " + o.score));
-
-                //foreach (var p in ext7)
-                //    Console.WriteLine(p);
-
-                //int i = 0;
-                //foreach (students s in stl)
-                //{
-
-                //    foreach (scores t in s.scores)
-                //    {
-
-                //        Console.WriteLine( "  " + i + "  " + t.id + "  " + t.scoresName + "  " + t.score);
-                //    }
-                //    i++;
-                //}
-
-
-
-                // Take 采取
-                // 获取数组前三个元素
-                var ex21 = numbers.Take(3);
-                // foreach(var n in ex21)
-                // Console.WriteLine(n);
-
-                // Skip 跳过 
-                // 跳过前5个
-                var ex22 = numbers.Skip(5);
-
-                // TakeWhile，获取小于6的
-                //获取， 依次获取小于6的,大于6的停止循环获取
-                var ex23 = numbers.TakeWhile(n => n < 6);
-                // foreach (var n in ex23)
-                // Console.WriteLine(n);
-
-
-                // 5, 4, 1, 3, 9, 8, 6, 7, 2, 0
-                // 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
-
-                var ex24 = numbers.TakeWhile((n, index) => n >= index);
-                //foreach (var n in ex24)
-                //    Console.WriteLine(n);
-
-
-                //跳过， 获取第一个大于6后面的所有序列
-                var ex25 = numbers.SkipWhile(n => n < 6);
-                //foreach (var n in ex25)
-                //Console.WriteLine(n);
-
-                // 5, 4, 1, 3, 9, 8, 6, 7, 2, 0
-                // 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
-                var ex26 = numbers.SkipWhile((n, index) => n >= index);
-                 foreach (var n in ex25)
-                 Console.WriteLine(n);
-
-            }
-            #endregion
+           
 
             Console.ReadLine();
 
@@ -458,26 +235,11 @@ namespace ConsoleApp
 
     }
 
-    public class students
-    {
-        public int id;
-        public string name;
-        public string remark;
-        public List<scores> scores;
-    }
+    
 
-    public class scores
-    {
-        public scores(int id, string name, int score)
-        {
-            this.id = id;
-            scoresName = name;
-            this.score = score;
-        }
-        public int id;
-        public string scoresName;
-        public int score;
-    }
+
+
+   
 
     public static class Test
     {
