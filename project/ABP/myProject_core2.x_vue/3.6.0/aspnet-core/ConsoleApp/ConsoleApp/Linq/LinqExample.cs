@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Xml.Linq;
 
 namespace ConsoleApp.Linq
 {
@@ -10,9 +12,9 @@ namespace ConsoleApp.Linq
 
         public void LinqConsole()
         {
-            exmple();
 
-
+            //exmple();
+            study();
 
         }
         public void exmple()
@@ -285,37 +287,208 @@ namespace ConsoleApp.Linq
 
             #endregion
 
+
+            #region Query Execution 查询执行
+
+            // 下面的示例展示了如何在循环语句中枚举查询之前如何延迟查询执行
+            // 序列运算符形成第一个查询，直到枚举他们才执行
+            // 注意，在计算每个元素之前，局部变量i增加（作为副作用） 
+
+
+
+            int test48 = 0;
+            var ex48 = from n in numbers
+                       select ++test48;
+
+            //foreach (var v in ex48)
+            //{
+            //    Console.WriteLine(test48 + "----" + v);
+            //}
+
+            // 方法如ToList() 导致查询立即执行，缓存结果
+            // 在迭代结果之前，局部变量i 已经被完全递增
+
+            int test49 = 0;
+            var ex49 = (from n in numbers
+                        select ++test49).ToList();
+            //foreach (var v in ex49)
+            //{
+            //    Console.WriteLine(v + " ---- " + test49);
+            //}
+
+            // 延迟执行允许我们定义一次查询，然后再数据更改之后再使用它
+            // 再第二次运行期间，同一个查询对象，Lowort ,将迭代心的数字状态[]
+            //  产生不同的结果
+            var ex50 = from n in numbers
+                       where n <= 3
+                       select n;
+            //foreach (var v in ex50)
+            //{
+            //    Console.WriteLine(v);
+            //}
+
+            //Console.WriteLine("------------");
+            //for ( int i = 0; i < 10; i++)
+            //{
+            //    numbers[i] = -numbers[i];
+            //}
+
+            //Console.WriteLine("------------");
+            //foreach(int n in ex50)
+            //{
+            //    Console.WriteLine(n);
+            //}
+
+
+
+            #endregion
+
+
+            #region  Join Operators
+
+            #endregion
         }
 
         public void study()
         {
             // group 
             var group = from l in stl
-
                         group l by l.name[0] into g
-
                         orderby g.Key
                         select g;
 
-            // let 
+            // let, 使用let子句可将表达式（如方法调用）的结果存储再新范围变量中
             var let = from l in stl
                       let frt = l.name.Split(",")[1]
                       select frt;
 
+            string[] strings =
+        {
+            "AB penny saved is a penny earned.",
+            "THhe early bird catches the worm.",
+            "The pen is mightier than the sword."
+        };
+            var qu1 = from st in strings
+                      let words = st.Split(' ')
+                      from word in words
+                      let w = word.ToLower()
+                      where w[0] == 'a' || w[0] == 'p' || w[0] == 't'
+                      select w;
+
+
+
+
             // lookup
+            // 类似字典，不可修改
             var quert = stl.ToLookup(n => n.id);
+
+            // 对查询结果进行分祖
+            var q0 = from s in stl
+                     group s by s.name[0];
+
+            //foreach(var g in q0)
+            //{
+            //    Console.WriteLine($"key:{g.Key}");
+            //    foreach(var st in g)
+            //    {
+            //        Console.WriteLine($"Name:{st.name}");
+            //    }
+            //}
+
+            var q01 = from s in stl
+                      let avgSco = GetPercentile(s)
+                      group new { s.name, s.remark } by avgSco into sg
+                      orderby sg.Key
+                      select sg;
+
+            //foreach (var g in q01)
+            //{
+            //    Console.WriteLine($"key:{g.Key}");
+            //    foreach (var st in g)
+            //    {
+            //        Console.WriteLine($"Name:{st.name}");
+            //    }
+            //}
+
+
+
+
+            //  简单键联接
+            var q1 = from stu in stl
+                     join s in sList on stu.SchName equals s
+                     select new { stuName = stu.name, schName = s.sName };
+
+            var q2 = from stu in stl
+                     join g in gList on stu.gId equals g.id
+                     select new { stuName = stu.name, schName = g.gName };
+            // 复合键联接
+            var q3 = from stu in stl
+                     join g in gList
+                     on new { Id = stu?.gId ?? 0 }
+                     equals new { Id = g.id }
+                     select stu;
+            var q3a = from stu in stl
+                      join g in gList
+                      on new { Id = stu.gId }
+                      equals new { Id = g?.id }
+                      select stu;
+            var q3b = from stu in stl
+                      join g in gList
+                      on new { Id = stu.gId }
+                      equals new { Id = (int?)g.id }
+                      select stu;
+
+
+            // 分组联接
+            var q4 = from stu in stl
+                     join s in sList on stu.SchName equals s into t
+                     select new { ownerName = stu.name, ss = t };
+
+            XElement q5 = new XElement("ower",
+                 from stu in stl
+                 join s in sList on stu.SchName equals s into t
+                 select new XElement("person",
+                    new XAttribute("ownerName", stu.name),
+                    from sc in t
+                    select new XElement("schName", sc.sName)));
+            //Console.WriteLine(q5);
+            // 左外部联接
+            var q6 = from stu in stl
+                     join s in sList on stu.SchName equals s into t
+                     from sub in t.DefaultIfEmpty()
+                     select new { stu.name, sch = sub?.sName ?? string.Empty };
+
+
+            var q7 = from s in stl
+                     where s != null
+                     join g in gList on s.gId equals g.id
+                     select new { s.name, g.gName };
+
+
+        }
+
+
+        protected static int GetPercentile(Student s)
+        {
+            double avg = s.scores.Average(p => p.score);
+            return avg > 0 ? (int)avg / 10 : 0;
         }
     }
 
-    public static class CustomSequenceOperators
-    {
-        //public static IEnumerable Combine(this IEnumerable first, IEnumerable second, Func func)
-        //{
-        //    using (IEnumerator)
-
-        //}
-    }
-
+    //public static class CustomSequenceOperators
+    //{
+    //    // ,Func func
+    //    public static IEnumerable Combine(this IEnumerable first, IEnumerable second , Func<T> func)
+    //    {
+    //        using (IEnumerator e1 = first.GetEnumerator(), e2 = second.GetEnumerator())
+    //        {
+    //            while (e1.MoveNext() && e2.MoveNext())
+    //            {
+    //                yield return func(e1.Current, e2.Current);
+    //            }
+    //        }
+    //    }
+    //}
 
 
     public class CaseInsensitiveComparer : IComparer<string>
@@ -343,6 +516,8 @@ namespace ConsoleApp.Linq
             Array.Sort<char>(wordChars);
             return new string(wordChars);
         }
+
+
 
     }
 
