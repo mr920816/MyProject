@@ -179,12 +179,6 @@ C:\Users\Dev\Desktop\ABP_Project\project\ABP\3.6.0\aspnet-core\src\MyProject.Cor
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\3.6.0\aspnet-core\src\MyProject.Core\obj\Debug\net461\MyProject.Core.csproj.CopyComplete
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\3.6.0\aspnet-core\src\MyProject.Core\obj\Debug\net461\MyProject.Core.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\3.6.0\aspnet-core\src\MyProject.Core\obj\Debug\net461\MyProject.Core.pdb
-C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Core\obj\Debug\net461\MyProject.Core.csproj.CoreCompileInputs.cache
-C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Core\obj\Debug\net461\UserSecretsAssemblyInfo.cs
-C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Core\obj\Debug\net461\MyProject.Core.AssemblyInfoInputs.cache
-C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Core\obj\Debug\net461\MyProject.Core.AssemblyInfo.cs
-C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Core\obj\Debug\net461\MyProject.Core.dll
-C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Core\obj\Debug\net461\MyProject.Core.pdb
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Core\bin\Debug\net461\MyProject.Core.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Core\bin\Debug\net461\MyProject.Core.pdb
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Core\bin\Debug\net461\Abp.dll
@@ -358,4 +352,11 @@ C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Core\bin\Debug\net461\System.Xml.XmlSerializer.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Core\bin\Debug\net461\System.Xml.XPath.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Core\bin\Debug\net461\System.Xml.XPath.XDocument.dll
+C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Core\obj\Debug\net461\MyProject.Core.csproj.CoreCompileInputs.cache
+C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Core\obj\Debug\net461\UserSecretsAssemblyInfo.cs
+C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Core\obj\Debug\net461\MyProject.Core.AssemblyInfoInputs.cache
+C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Core\obj\Debug\net461\MyProject.Core.AssemblyInfo.cs
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Core\obj\Debug\net461\MyProject.Core.csproj.CopyComplete
+C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Core\obj\Debug\net461\MyProject.Core.dll
+C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Core\obj\Debug\net461\MyProject.Core.pdb
+C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Core\obj\Debug\net461\MyProject.Core.csprojAssemblyReference.cache

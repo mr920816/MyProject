@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using EF_Core_Web.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -22,6 +24,10 @@ namespace EF_Core_Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            //   数据库连接
+            var connection = "server=localhost;port=3306;database=my_test;user=root;password=123456;";
+            services.AddDbContextPool<DataContext>(options => options.UseMySQL(connection));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
