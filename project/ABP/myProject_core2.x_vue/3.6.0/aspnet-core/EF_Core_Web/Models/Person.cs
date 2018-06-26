@@ -14,13 +14,15 @@ namespace EF_Core_Web.Models
     public class Person
     {
         // 在生成的值添加
-        //  [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         [Required]
+        //[ConcurrencyCheck]
         public string Name { get; set; }
-        public int Age { get; set; }
+        //public int Age { get; set; }
 
+        [MaxLength(100)]
         public string Address { get; set; }
 
         // 没有值生成
@@ -28,14 +30,23 @@ namespace EF_Core_Web.Models
         public string Remark { get; set; }
 
         // 在生成的值将添加或更新
-      // [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        // [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public DateTime LastUpdated { get; set; }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-        public DateTime Created { get; set; }
+        //[DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        //public DateTime Created { get; set; }
 
-        [NotMapped]
-        public Department dept { get; set; }
+
+
+        //[NotMapped]
+        //public Department dept { get; set; }
+
+
+        //[Required]
+        public int deptId { get; set; }
+
+        [ForeignKey("deptId")]
+        public Department department { get; set; }
 
     }
 }

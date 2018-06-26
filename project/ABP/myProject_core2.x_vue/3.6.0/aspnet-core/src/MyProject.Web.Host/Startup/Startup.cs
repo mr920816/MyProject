@@ -134,8 +134,9 @@ namespace MyProject.Web.Host.Startup
             // Enable middleware to serve swagger-ui assets (HTML, JS, CSS etc.)
             app.UseSwaggerUI(options =>
             {
-                options.InjectOnCompleteJavaScript("/swagger/ui/abp.js");
-                options.InjectOnCompleteJavaScript("/swagger/ui/on-complete.js");
+                // 2018-06-25 miaorong 注释，dll 版本不一，导致出错
+                //options.InjectOnCompleteJavaScript("/swagger/ui/abp.js");
+                //options.InjectOnCompleteJavaScript("/swagger/ui/on-complete.js");
                 options.SwaggerEndpoint("/swagger/v1/swagger.json", "MyProject API V1");
             }); // URL: /swagger
         }

@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
+using Microsoft.EntityFrameworkCore.ValueGeneration;
 using MySql.Data.EntityFrameworkCore.Storage.Internal;
 using System;
 
@@ -52,9 +53,11 @@ namespace EF_Core_Web.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Address");
+                    b.Property<string>("Address")
+                        .HasMaxLength(100);
 
-                    b.Property<int>("Age");
+                    b.Property<string>("Discriminator")
+                        .IsRequired();
 
                     b.Property<DateTime>("LastUpdated")
                         .ValueGeneratedOnAdd()
@@ -65,9 +68,76 @@ namespace EF_Core_Web.Migrations
 
                     b.Property<string>("Remark");
 
+                    b.Property<int>("deptId");
+
+                    b.Property<string>("flag");
+
                     b.HasKey("Id");
 
+                    b.HasIndex("deptId");
+
                     b.ToTable("Person");
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("Person");
+                });
+
+            modelBuilder.Entity("EF_Core_Web.Models.Teacher", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("Age");
+
+                    b.Property<string>("DisplayName")
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasComputedColumnSql(" Name+','+EnglishName ");
+
+                    b.Property<string>("EnglishName");
+
+                    b.Property<string>("JobName");
+
+                    b.Property<string>("Name")
+                        .IsRequired();
+
+                    b.HasKey("Id");
+
+                    b.ToTable("t_teacher","my_test");
+                });
+
+            modelBuilder.Entity("EF_Core_Web.Models.Student", b =>
+                {
+                    b.HasBaseType("EF_Core_Web.Models.Person");
+
+                    b.Property<string>("CorceName");
+
+                    b.Property<int>("Mount");
+
+                    b.Property<string>("Url");
+
+                    b.ToTable("Student");
+
+                    b.HasDiscriminator().HasValue("Student");
+                });
+
+            modelBuilder.Entity("EF_Core_Web.Models.SuperPerson", b =>
+                {
+                    b.HasBaseType("EF_Core_Web.Models.Person");
+
+                    b.Property<string>("SupperAtt");
+
+                    b.Property<string>("SupperLog");
+
+                    b.ToTable("SuperPerson");
+
+                    b.HasDiscriminator().HasValue("SuperPerson");
+                });
+
+            modelBuilder.Entity("EF_Core_Web.Models.Person", b =>
+                {
+                    b.HasOne("EF_Core_Web.Models.Department", "department")
+                        .WithMany()
+                        .HasForeignKey("deptId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

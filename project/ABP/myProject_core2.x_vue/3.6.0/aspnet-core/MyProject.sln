@@ -27,9 +27,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp", "ConsoleApp\Co
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EF", "EF", "{95134D52-E4C1-4E68-B3D6-EF058809AE1B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF_Core_Web", "EF_Core_Web\EF_Core_Web.csproj", "{C7DDAD33-2353-416E-A0BA-E5A6F44338DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EF_Core_Web", "EF_Core_Web\EF_Core_Web.csproj", "{C7DDAD33-2353-416E-A0BA-E5A6F44338DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core_ClassLibrary", "Core_ClassLibrary\Core_ClassLibrary.csproj", "{E47D06ED-A086-4972-ADE4-99250EE8D7F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core_ClassLibrary", "Core_ClassLibrary\Core_ClassLibrary.csproj", "{E47D06ED-A086-4972-ADE4-99250EE8D7F1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

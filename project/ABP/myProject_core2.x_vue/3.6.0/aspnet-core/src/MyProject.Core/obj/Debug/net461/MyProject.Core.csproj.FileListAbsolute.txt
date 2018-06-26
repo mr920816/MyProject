@@ -359,4 +359,8 @@ C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Core\obj\Debug\net461\MyProject.Core.csproj.CopyComplete
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Core\obj\Debug\net461\MyProject.Core.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Core\obj\Debug\net461\MyProject.Core.pdb
-C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Core\obj\Debug\net461\MyProject.Core.csprojAssemblyReference.cache
+C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Core\bin\Debug\net461\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Core\bin\Debug\net461\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Core\bin\Debug\net461\System.Memory.dll
+C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Core\bin\Debug\net461\System.Numerics.Vectors.dll
+C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Core\bin\Debug\net461\System.Security.Permissions.dll

@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Console;
 
 namespace EF_Core_Web
 {
@@ -26,9 +28,18 @@ namespace EF_Core_Web
             services.AddMvc();
             //   数据库连接
             var connection = "server=localhost;port=3306;database=my_test;user=root;password=123456;";
-            services.AddDbContextPool<DataContext>(options => options.UseMySQL(connection));
+            // services.AddDbContextPool<DataContext>(options => options.UseLoggerFactory(MyLoggerFactory));
+
+            services.AddDbContextPool<DataContext>(options => { options.UseLoggerFactory(MyLoggerFactory);
+                options.UseMySQL(connection); });
+             
+
 
         }
+
+        public static readonly LoggerFactory MyLoggerFactory
+    = new LoggerFactory(new[] { new ConsoleLoggerProvider((_, __) => true, true) });
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -36,6 +47,7 @@ namespace EF_Core_Web
             if (env.IsDevelopment())
             {
                 app.UseBrowserLink();
+        
                 app.UseDeveloperExceptionPage();
             }
             else

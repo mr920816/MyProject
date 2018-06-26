@@ -1,16 +1,38 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
+using System;
 
 namespace EF_Core_Web.Models
 {
     //   [DbConfigurationType(typeof(MySql.Data.Entity.MySqlEFConfiguration))]
     public class DataContext : DbContext
     {
+
+
         public DataContext(DbContextOptions<DataContext> options)
                 : base(options)
         {
+            //this.Database.EnsureCreated();
+        }
+
+
+
+
+        // 注册依赖注入
+        // 服务（例如：Context）在应用程序启动期间通过依赖注入进行注册
+        // 需要这些服务的组建（例如：MVC控制器）然后通过构造函数参数或属性提供这些服务
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            //if (!optionsBuilder.IsConfigured)
+            //{
+            //    optionsBuilder.UseMySQL("server=localhost;port=3306;database=my_test;user=root;password=123456;");
+
+            //}
 
         }
-       
+
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // Fluent API
@@ -24,12 +46,31 @@ namespace EF_Core_Web.Models
 
             modelBuilder.Entity<Person>()
                 .Property(p => p.LastUpdated)
-                .HasDefaultValueSql(" NOW()");
+                .HasDefaultValueSql(" NOW()"); // 默认值
+
+            modelBuilder.Entity<Person>()
+                .Property<string>("flag"); //新增字段
+                                           // 继承
+            modelBuilder.Entity<Student>().HasBaseType<Person>();
+            // 值转换
+            //modelBuilder.Entity<Student>()
+            //    .Property(e => e.Mount)
+            //   .HasConversion(v => v.ToString(), v => (EquineBeast)Enum.Parse(typeof(EquineBeast),v));
+
+            modelBuilder.Entity<Teacher>()
+               .Property(p => p.DisplayName)
+               .HasComputedColumnSql(" Name+','+EnglishName ");
+
+
         }
 
 
 
         public DbSet<Person> Person { get; set; }
+        public DbSet<SuperPerson> SuperPerson { get; set; }
+        public DbSet<Student> Student { get; set; }
+        public DbSet<Teacher> Teacher { get; set; }
+
         public DbSet<Department> Department { get; set; }
         public DbSet<Company> Company { get; set; }
 
@@ -69,13 +110,44 @@ namespace EF_Core_Web.Models
         // 在生成的值将添加或更新（数据注释）
         // [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         // Fluent API 可用于更改给定属性的值生成模式
+        // 没有值生成
+        // .Property(p=> p.id).ValueGeneratedNever();
+        //生成的值添加 .ValueGeneratedOnAdd();
+        //生成的值添加或更新 .ValueGeneratedOnAddOrUpdate();
+
+        // 必须和可选属性 Required and Optional Properties
+        // [Required]  .Property(p=> p.id).IsRequired();
+
+        // 最长长度 Maximum Length
+
+        // 并发令牌 Concurrency Tokens (没做过测试)
 
 
+        //   阴影属性
+        //      指NET 实体类中未定义的属性，但针对EF 核心模型中该实体类型定义的。这些属性的值和状态仅在变化跟踪中
+        //      保持。它们常用于外键属性。
+
+        //   关系
+        //  关系定义了两个实体将互相关联起来
+        //   术语的定义：主体实体；依赖的实体；外键；主体的密钥；导航属性；集合导航属性；引用导航属性；反向导航属性。
+        //    HasOne或HasMany 标识你正在开始配置的实体类型上的导航属性。然后链接到调用withone 或withMany 来标识反向导航。Hasone/withone 用于引用导航属性，hasmany/withmany用于集合导航属性
 
 
+        // 继承 Inheritance 
+        // EF 模型中的继承用于控制数据库中如何表示实体类中的继承
+        // 约定：可以通过：符号来实现，
+        // Fluent API: modelBuilder.Entity<Student>().HasBaseType<Person>();
 
+        // 支持字段 Backing Fields
+        // 支持字段允许EF 读取和/或写入一个字段，而不是一个属性。
+        // 当在类中的封装被用来限制使用和/或增强应用程序代码访问数据的语义时，这可能时有用的，但是应该在不使用这些限制/增强的情况下从数据库读取或写入该值
 
+        // 值转换
 
+        // 数据播种
+        // 允许提供初始数据填充数据库
+
+        // 实体类型构造函数
 
 
 

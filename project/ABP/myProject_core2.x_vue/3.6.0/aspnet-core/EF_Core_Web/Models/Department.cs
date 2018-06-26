@@ -9,7 +9,7 @@ namespace EF_Core_Web.Models
 {
     public class Department
     {
-        [Required]
+        [Key,DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         [Required]
