@@ -304,6 +304,7 @@ C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\Microsoft.AspNetCore.Authorization.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\Microsoft.AspNetCore.Authorization.Policy.dll
+C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\Microsoft.AspNetCore.Connections.Abstractions.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\Microsoft.AspNetCore.Cors.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
@@ -311,6 +312,7 @@ C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\Microsoft.AspNetCore.DataProtection.Abstractions.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\Microsoft.AspNetCore.Diagnostics.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\Microsoft.AspNetCore.Diagnostics.Abstractions.dll
+C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\Microsoft.AspNetCore.HostFiltering.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\Microsoft.AspNetCore.Hosting.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\Microsoft.AspNetCore.Hosting.Abstractions.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
@@ -348,6 +350,7 @@ C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\Microsoft.AspNetCore.Server.Kestrel.Core.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\Microsoft.AspNetCore.Server.Kestrel.Https.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\Microsoft.AspNetCore.Server.Kestrel.Transport.Abstractions.dll
+C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\Microsoft.AspNetCore.StaticFiles.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\Microsoft.AspNetCore.WebUtilities.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\Microsoft.CodeAnalysis.dll
@@ -355,6 +358,7 @@ C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\Microsoft.CodeAnalysis.Razor.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\Microsoft.DotNet.PlatformAbstractions.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\Microsoft.EntityFrameworkCore.dll
+C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\Microsoft.EntityFrameworkCore.Abstractions.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\Microsoft.EntityFrameworkCore.Relational.Design.dll
@@ -428,16 +432,21 @@ C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\System.Diagnostics.DiagnosticSource.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\System.Interactive.Async.dll
+C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\System.IO.Pipelines.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\System.Linq.Dynamic.Core.dll
+C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\System.Memory.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\System.Numerics.Vectors.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\System.Reflection.Metadata.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\System.Security.AccessControl.dll
+C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\System.Security.Cryptography.Cng.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\System.Security.Cryptography.Xml.dll
+C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\System.Security.Permissions.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\System.Security.Principal.Windows.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\System.Text.Encoding.CodePages.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\System.Text.Encodings.Web.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\System.Threading.Tasks.Extensions.dll
+C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\System.ValueTuple.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\System.Xml.XPath.XmlDocument.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\TimeZoneConverter.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\Microsoft.Win32.Primitives.dll
@@ -529,7 +538,6 @@ C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\System.Threading.Thread.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\System.Threading.ThreadPool.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\System.Threading.Timer.dll
-C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\System.ValueTuple.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\System.Xml.ReaderWriter.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\System.Xml.XDocument.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\System.Xml.XmlDocument.dll
@@ -550,11 +558,3 @@ C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\obj\Debug\net461\MyProject.Web.Core.csproj.CopyComplete
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\obj\Debug\net461\MyProject.Web.Core.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\obj\Debug\net461\MyProject.Web.Core.pdb
-C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\Microsoft.AspNetCore.Connections.Abstractions.dll
-C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\Microsoft.AspNetCore.HostFiltering.dll
-C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.dll
-C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\Microsoft.EntityFrameworkCore.Abstractions.dll
-C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\System.IO.Pipelines.dll
-C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\System.Memory.dll
-C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\System.Security.Cryptography.Cng.dll
-C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.Web.Core\bin\Debug\net461\System.Security.Permissions.dll

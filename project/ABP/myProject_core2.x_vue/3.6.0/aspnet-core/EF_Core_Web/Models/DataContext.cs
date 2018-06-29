@@ -37,42 +37,108 @@ namespace EF_Core_Web.Models
         {
             // Fluent API
             modelBuilder.Ignore<Flag>(); // 排除类型
-            modelBuilder.Entity<Department>() // 排除属性
+            modelBuilder.Entity<Grade>() // 排除属性
                 .Ignore(b => b.Other2);
             //modelBuilder.Entity<Department>() //主键
             //    .HasKey(c => c.Id);
-            modelBuilder.Entity<Company>() //复合主键
-             .HasKey(c => new { c.Code, c.Name });
+            //modelBuilder.Entity<Company>() //复合主键
+            // .HasKey(c => new { c.Code, c.Name });
 
-            modelBuilder.Entity<Person>()
-                .Property(p => p.LastUpdated)
-                .HasDefaultValueSql(" NOW()"); // 默认值
+
+
 
             modelBuilder.Entity<Person>()
                 .Property<string>("flag"); //新增字段
                                            // 继承
-            modelBuilder.Entity<Student>().HasBaseType<Person>();
-            // 值转换
-            //modelBuilder.Entity<Student>()
-            //    .Property(e => e.Mount)
-            //   .HasConversion(v => v.ToString(), v => (EquineBeast)Enum.Parse(typeof(EquineBeast),v));
+                                           //modelBuilder.Entity<Student>().HasBaseType<Person>();
 
+
+            // modelBuilder.Entity<Teacher>()
+            // .Property(p => p.JobName)
+            //.HasDefaultValue("老师"); // 默认值
+
+
+            //  值转换
             modelBuilder.Entity<Teacher>()
-               .Property(p => p.DisplayName)
-               .HasComputedColumnSql(" Name+','+EnglishName ");
+                .Property(e => e.Mount)
+               .HasConversion(v => v.ToString(), v => (EquineBeast)Enum.Parse(typeof(EquineBeast), v));
 
+            // 数据设定 Data  Seeding
+            modelBuilder.Entity<School>().HasData(
+                new School { Id = 1, Name = "小学", Code = "小学" },
+                 new School { Id = 2, Name = "中学", Code = "中学" });
+
+            modelBuilder.Entity<Course>().HasData(
+               new Course { Id = 1, Name = "语文" },
+                new Course { Id = 2, Name = "数学" },
+                  new Course { Id = 3, Name = "英语" }
+                );
+
+            modelBuilder.Entity<Grade>().HasData(
+                new Grade { Id = 1, Name = "一年级", Code = "一年级", SId = 1 },
+                 new Grade { Id = 2, Name = "二年级", Code = "二年级", SId = 1 },
+                 new Grade { Id = 3, Name = "初一", Code = "初一", SId = 2 },
+                 new Grade { Id = 4, Name = "初二", Code = "初二", SId = 2 });
+
+
+            modelBuilder.Entity<Student>().HasData(
+                 new Student { Id = 1, Name = "小明", Address = "花果山", GradeId = 1 },
+                 new Student { Id = 2, Name = "张三", Address = "上海", GradeId = 1 },
+                 new Student { Id = 3, Name = "李四", Address = "上海", GradeId = 1 },
+                  new Student { Id = 4, Name = "王二", Address = "上海", GradeId = 2 });
+
+            modelBuilder.Entity<StudentParent>().HasData(
+               new StudentParent { Id = 5, Name = "小明他爹", stuId = 1 },
+               new StudentParent { Id = 7, Name = "张三他妈", stuId = 2 },
+               new StudentParent { Id = 8, Name = "李四他爹", stuId = 3 });
+
+            modelBuilder.Entity<Teacher>().HasData(
+                new Teacher { Id = 1, Name = "老师A", GradeId = 1, EnglishName = "zhangsan", Mount = EquineBeast.Donkey },
+                new Teacher { Id = 2, Name = "老师B", GradeId = 1, EnglishName = "wanger" },
+                new Teacher { Id = 3, Name = "老师C", GradeId = 2, Mount = EquineBeast.Horse });
+
+
+            modelBuilder.Entity<Score>().HasData(
+             new Score { Id = 1, scoreSize = 50, CourseId = 1, StuId = 1 },
+               new Score { Id = 2, scoreSize = 60, CourseId = 2, StuId = 1 },
+                 new Score { Id = 3, scoreSize = 70, CourseId = 3, StuId = 1 },
+                   new Score { Id = 4, scoreSize = 80, CourseId = 1, StuId = 2 },
+               new Score { Id = 5, scoreSize = 90, CourseId = 3, StuId = 2 }
+              );
+
+
+
+            // 计算列
+            //modelBuilder.Entity<Teacher>()
+            //        .Property(p => p.DisplayName)
+            //        .HasComputedColumnSql(" CONCAT(`Name`,`EnglishName`)");
+
+            //序列
+            //modelBuilder.HasSequence<int>("OrderNumbers", schema: "my_test")
+            //   .StartsAt(100).HasMin(100).HasMax(10000)
+            //.IncrementsBy(5);
+
+            //modelBuilder.Entity<Teacher>()
+            //    .Property(o => o.Age)
+            //    .HasDefaultValueSql("NEXT VALUE FOR my_test.OrderNumbers");
+
+            // 全局过滤器
+
+            // modelBuilder.Entity<School>().Property<string>("TenantId").HasField("_tenantId");
+          //  modelBuilder.Entity<School>().HasQueryFilter(p => EF.Property<int>(p, "Id") == 1);
 
         }
 
 
 
         public DbSet<Person> Person { get; set; }
-        public DbSet<SuperPerson> SuperPerson { get; set; }
+        public DbSet<StudentParent> StudentParent { get; set; }
         public DbSet<Student> Student { get; set; }
         public DbSet<Teacher> Teacher { get; set; }
 
-        public DbSet<Department> Department { get; set; }
-        public DbSet<Company> Company { get; set; }
+        public DbSet<Grade> Grade { get; set; }
+        public DbSet<School> School { get; set; }
+        public DbSet<Course> Course { get; set; }
 
         // 包括类型和排除类型
         //约定        

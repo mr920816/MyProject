@@ -17,6 +17,9 @@ namespace EF_Core_Web.Models
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
+     
+
+
         [Required]
         //[ConcurrencyCheck]
         public string Name { get; set; }
@@ -43,10 +46,7 @@ namespace EF_Core_Web.Models
 
 
         //[Required]
-        public int deptId { get; set; }
-
-        [ForeignKey("deptId")]
-        public Department department { get; set; }
+       
 
     }
 }

@@ -30,9 +30,18 @@ namespace EF_Core_Web
             var connection = "server=localhost;port=3306;database=my_test;user=root;password=123456;";
             // services.AddDbContextPool<DataContext>(options => options.UseLoggerFactory(MyLoggerFactory));
 
-            services.AddDbContextPool<DataContext>(options => { options.UseLoggerFactory(MyLoggerFactory);
-                options.UseMySQL(connection); });
-             
+            services.AddDbContextPool<DataContext>(options =>
+            {
+                //options.UseLazyLoadingProxies(); //延迟加载
+                options.UseLoggerFactory(MyLoggerFactory);
+                options.UseMySql(connection);
+              
+
+
+            });
+
+
+
 
 
         }
@@ -46,16 +55,17 @@ namespace EF_Core_Web
         {
             if (env.IsDevelopment())
             {
-                app.UseBrowserLink();
-        
                 app.UseDeveloperExceptionPage();
             }
             else
             {
                 app.UseExceptionHandler("/Home/Error");
+                app.UseHsts();
             }
 
+            app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseCookiePolicy();
 
             app.UseMvc(routes =>
             {

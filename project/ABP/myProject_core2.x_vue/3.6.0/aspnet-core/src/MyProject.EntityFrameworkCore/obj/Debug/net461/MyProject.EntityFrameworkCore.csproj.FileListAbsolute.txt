@@ -229,6 +229,7 @@ C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.EntityFrameworkCore\bin\Debug\net461\Microsoft.AspNetCore.Identity.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.EntityFrameworkCore\bin\Debug\net461\Microsoft.AspNetCore.WebUtilities.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.EntityFrameworkCore\bin\Debug\net461\Microsoft.EntityFrameworkCore.dll
+C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.EntityFrameworkCore\bin\Debug\net461\Microsoft.EntityFrameworkCore.Abstractions.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.EntityFrameworkCore\bin\Debug\net461\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.EntityFrameworkCore\bin\Debug\net461\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.EntityFrameworkCore\bin\Debug\net461\Microsoft.EntityFrameworkCore.Relational.Design.dll
@@ -237,6 +238,7 @@ C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.EntityFrameworkCore\bin\Debug\net461\Microsoft.Extensions.Caching.Memory.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.EntityFrameworkCore\bin\Debug\net461\Microsoft.Extensions.Configuration.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.EntityFrameworkCore\bin\Debug\net461\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.EntityFrameworkCore\bin\Debug\net461\Microsoft.Extensions.Configuration.Binder.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.EntityFrameworkCore\bin\Debug\net461\Microsoft.Extensions.Configuration.EnvironmentVariables.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.EntityFrameworkCore\bin\Debug\net461\Microsoft.Extensions.Configuration.FileExtensions.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.EntityFrameworkCore\bin\Debug\net461\Microsoft.Extensions.Configuration.Json.dll
@@ -276,9 +278,12 @@ C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.EntityFrameworkCore\bin\Debug\net461\System.Diagnostics.DiagnosticSource.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.EntityFrameworkCore\bin\Debug\net461\System.Interactive.Async.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.EntityFrameworkCore\bin\Debug\net461\System.Linq.Dynamic.Core.dll
+C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.EntityFrameworkCore\bin\Debug\net461\System.Memory.dll
+C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.EntityFrameworkCore\bin\Debug\net461\System.Numerics.Vectors.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.EntityFrameworkCore\bin\Debug\net461\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.EntityFrameworkCore\bin\Debug\net461\System.Security.AccessControl.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.EntityFrameworkCore\bin\Debug\net461\System.Security.Cryptography.Xml.dll
+C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.EntityFrameworkCore\bin\Debug\net461\System.Security.Permissions.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.EntityFrameworkCore\bin\Debug\net461\System.Security.Principal.Windows.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.EntityFrameworkCore\bin\Debug\net461\System.Text.Encodings.Web.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.EntityFrameworkCore\bin\Debug\net461\System.Threading.Tasks.Extensions.dll
@@ -390,8 +395,3 @@ C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.EntityFrameworkCore\obj\Debug\net461\MyProject.EntityFrameworkCore.csproj.CopyComplete
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.EntityFrameworkCore\obj\Debug\net461\MyProject.EntityFrameworkCore.dll
 C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.EntityFrameworkCore\obj\Debug\net461\MyProject.EntityFrameworkCore.pdb
-C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.EntityFrameworkCore\bin\Debug\net461\Microsoft.EntityFrameworkCore.Abstractions.dll
-C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.EntityFrameworkCore\bin\Debug\net461\Microsoft.Extensions.Configuration.Binder.dll
-C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.EntityFrameworkCore\bin\Debug\net461\System.Memory.dll
-C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.EntityFrameworkCore\bin\Debug\net461\System.Numerics.Vectors.dll
-C:\Users\Dev\Desktop\ABP_Project\project\ABP\myProject_core2.x_vue\3.6.0\aspnet-core\src\MyProject.EntityFrameworkCore\bin\Debug\net461\System.Security.Permissions.dll

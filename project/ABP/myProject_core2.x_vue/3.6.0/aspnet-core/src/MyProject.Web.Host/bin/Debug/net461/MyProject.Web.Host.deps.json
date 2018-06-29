@@ -7,6 +7,7 @@
     "defines": [
       "FEATURE_SIGNALR",
       "DEBUG",
+      "NETFRAMEWORK",
       "NET461"
     ],
     "languageVersion": "",
