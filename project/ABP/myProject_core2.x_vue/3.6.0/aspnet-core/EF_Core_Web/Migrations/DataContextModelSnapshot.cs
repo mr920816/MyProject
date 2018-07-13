@@ -17,6 +17,40 @@ namespace EF_Core_Web.Migrations
                 .HasAnnotation("ProductVersion", "2.1.0-rtm-30799")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
+            modelBuilder.Entity("EF_Core_Web.Models.cengJi.A", b =>
+                {
+                    b.Property<int>("aId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("aCode")
+                        .IsRequired();
+
+                    b.Property<string>("aName");
+
+                    b.HasKey("aId");
+
+                    b.ToTable("A");
+                });
+
+            modelBuilder.Entity("EF_Core_Web.Models.cengJi.B", b =>
+                {
+                    b.Property<int>("bId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int?>("aId");
+
+                    b.Property<string>("bCode")
+                        .IsRequired();
+
+                    b.Property<string>("bName");
+
+                    b.HasKey("bId");
+
+                    b.HasIndex("aId");
+
+                    b.ToTable("B");
+                });
+
             modelBuilder.Entity("EF_Core_Web.Models.Course", b =>
                 {
                     b.Property<int>("Id")
@@ -225,6 +259,13 @@ namespace EF_Core_Web.Migrations
                         new { Id = 7, LastUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), Name = "张三他妈", stuId = 2 },
                         new { Id = 8, LastUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), Name = "李四他爹", stuId = 3 }
                     );
+                });
+
+            modelBuilder.Entity("EF_Core_Web.Models.cengJi.B", b =>
+                {
+                    b.HasOne("EF_Core_Web.Models.cengJi.A", "a")
+                        .WithMany("b")
+                        .HasForeignKey("aId");
                 });
 
             modelBuilder.Entity("EF_Core_Web.Models.Grade", b =>

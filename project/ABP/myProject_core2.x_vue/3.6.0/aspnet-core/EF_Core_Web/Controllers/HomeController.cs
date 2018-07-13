@@ -10,6 +10,7 @@ using Microsoft.Extensions.Logging;
 using System.Globalization;
 using System.Threading;
 using Microsoft.EntityFrameworkCore.Extensions.Internal;
+using EF_Core_Web.Models.cengJi;
 
 namespace EF_Core_Web.Controllers
 {
@@ -118,17 +119,29 @@ namespace EF_Core_Web.Controllers
                 //var grade = _context.School;
 
                 // 基本保存
-                
+
                 // 断开连接的实体
                 // DbContext 实例将自动跟踪从数据库返回的实体。调用 SaveChanges 时，将检测到对这些实体所做的更改并根据需要更新数据库
                 // 有时会使用一个上下文实例查询实体，然后使用其他实例对其进行保存。这通常在“断开连接”的情况下发生
                 // EF Core 只能跟踪具有给定主键值的任何实体的一个实例。避免使其成为问题的最佳方法是为每个工作单元使用短生存期的上下文
                 // ，以便上下文一开始是空的、向其附加实体、保存这些实体，然后释放并丢弃上下文
+
                 // 标识新实体
-                // 客户端
+                // 客户端标识新实体
 
+                //var entity = new School
+                //{
 
-
+                //    Code = "常德路小学",
+                //    Name = "常德路小学",
+                //    Grades = new List<Grade>
+                //    {
+                //        new Grade{ Code="一年级",Name="常德路小学"},
+                //        new Grade{ Code="二年级",Name="常德路小学"}
+                //    }
+                //};
+                ////ContextSchool.InsertGraph(_context, entity);
+                //ContextSchool.updateGraph(_context, entity);
 
 
 
@@ -154,7 +167,25 @@ namespace EF_Core_Web.Controllers
                 //var entity = _context.School.Where(n => n.Code == "长寿路小学").FirstOrDefault();
                 //entity.Other = "长寿路幼小2";
 
-                //_context.SaveChanges();
+                //    var entity = new A
+                //    {
+
+                //        aCode = "aa",
+                //        aName = "aa",
+                //        b = new List<B>
+                //        {
+                //            new B{ bCode="bb",bName="bb"},
+                //            new B{ bCode="cc",bName="cc"}
+                //        }
+                //    };
+                //    _context.A.Add(entity);
+                //    _context.SaveChanges();
+
+
+
+
+
+
             }
 
             catch (Exception ex)
@@ -175,15 +206,37 @@ namespace EF_Core_Web.Controllers
 
             try
             {
-                var entity = _context.School.Where(n => n.Code == "长寿路小学").FirstOrDefault();
-                entity.Other = "Other2";
-                
-                _context.Database.ExecuteSqlCommand(
-                 "UPDATE  School SET Name = 'Jane2' WHERE id=4 ");
-                _context.SaveChanges();
 
-                DateTime dd = DateTime.Now;
-                ViewData["Message"] = dd;
+                // Lambda 表达式 
+                // 将表达式分配给委托类型
+                Func<int, int, int> square = (x, y) => x * y;
+                // ViewData["Message"] = square(5, 6);
+
+                // Lambda表达式作为方法参数传递
+                // ViewData["Message"] = ShowValue((x, y) => x + y);
+
+                Func<int, int, bool> test2 = (x, y) => x == y;
+                // ViewData["Message"] = test2(2,3);
+
+                TestDelegate test3 = n => { string s = n + " world "; s += " 你好！"; return s; };
+                // ViewData["Message"] = test3("hello");
+
+                // Lambda 表达式和元组
+                var numbers = (1, 2, 3, 4);
+                Func<(int, int, int, int), (int, int, int, int)> test4 = (n) => (n.Item1, n.Item2, n.Item3, n.Item4);
+                var doubledNumbers = test4(numbers);
+                //ViewData["Message"] = "值1：" + numbers + "    值2：" + doubledNumbers;
+
+                // 含标准查询运算符的 Lambda
+
+
+
+                
+
+
+
+
+
             }
 
             catch (DbUpdateConcurrencyException ex)
@@ -192,6 +245,25 @@ namespace EF_Core_Web.Controllers
             }
             return View();
         }
+
+
+
+        private static async Task<int> showSquares(int number)
+        {
+            return await Task.Factory.StartNew(x => (int)x * (int)x, number);
+        }
+
+
+        delegate string TestDelegate(string s);
+        public string ShowValue(Func<int, int, int> op)
+        {
+            string msg = "";
+
+            msg += op(5, 6);
+
+            return msg;
+        }
+
 
         public IActionResult Contact()
         {
@@ -204,5 +276,8 @@ namespace EF_Core_Web.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+
+
     }
 }

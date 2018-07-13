@@ -2,21 +2,261 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
+using System.Threading.Tasks;
 using System.Xml.Linq;
 
 namespace ConsoleApp.Linq
 {
     public class LinqExample : LinqBaseData
     {
+        // Lambda 表达式中的变量范围
+        delegate bool D();
+        delegate bool D2(int i);
+
+        D del;
+        D2 del2;
 
         public void LinqConsole()
         {
-
+            //Begin().Wait();
             //exmple();
-            study();
+            //study();
+
+            //TestMethod(5);
+            //bool result = del2(10);
+            //Console.WriteLine(result);
+
+            Expression<Func<int, int>> addFive = (num) => num + 5;
+            //if (addFive.NodeType == ExpressionType.Lambda)
+            //{
+            //    var lambdaExp = (LambdaExpression)addFive;
+            //    var Parameter = lambdaExp.Parameters.First();
+
+            //    Console.WriteLine(Parameter.Name);
+            //    Console.WriteLine(Parameter.Type);
+            //}
+
+
+            //var one = Expression.Constant(1, typeof(int));
+            //var two = Expression.Constant(2, typeof(int));
+
+            //var fun = addFive.Compile();
+            //var answer = fun(4);
+            var constant = 5;
+            Expression<Func<int>> add = () => constant + 6;
+            var func = add.Compile(); // 创建委托
+            var answer2 = func(); // Invoke Delegate 调用委托
+            //Console.WriteLine(answer2);
+
+            // 检查不具有子级的表达式
+            var constant1 = Expression.Constant(24, typeof(int));
+            //Console.WriteLine($"{constant1.NodeType}");
+            //Console.WriteLine($"{constant1.Type}");
+            //Console.WriteLine($"{constant1.Value}");
+
+            // 检查一个简单的加法表达式
+            //Expression<Func<int, int, int>> addition = (a, b) => a + b;
+            //Console.WriteLine($"Type: {addition.Type}");
+            //Console.WriteLine($"NodeType: {addition.NodeType}");
+            //Console.WriteLine($"Name: {addition.Name}");
+            //Console.WriteLine($"ReturnType: {addition.ReturnType.ToString()}");
+            //Console.WriteLine($"Count: {addition.Parameters.Count}");
+            //foreach (var exp in addition.Parameters)
+            //{
+            //    Console.WriteLine($"Type: { exp.Type} Name: { exp.Name}");
+            //}
+            //var aitBody = (BinaryExpression)addition.Body;
+
+
+            //Console.WriteLine($"NodeType: {aitBody.NodeType}");
+            //Console.WriteLine($"Left.NodeType: {aitBody.Left.NodeType}");
+
+            //var left = (ParameterExpression)aitBody.Left;
+            //Console.WriteLine($"left.Type: {left.Type.ToString()}left.Name: {left.Name}");
+            //Console.WriteLine($"aitBody.Right.NodeType: {aitBody.Right.NodeType}");
+
+
+            // 生成表达式树
+            Expression<Func<int>> sum = () => 3 + 4;
+            // 创建节点,若要构造表达式树，必须构造叶节点。叶节点时常量，因此可以使用 Expression.Constant 方法创建节点
+
+            var one = Expression.Constant(1, typeof(int));
+            var two = Expression.Constant(2, typeof(int));
+            var addition = Expression.Add(one, two); // 生成加法表达式
+            var lambda = Expression.Lambda(addition); // 创建 Lambda 表达式
+            Delegate dg = lambda.Compile(); // 编译表达式树得到委托
+
+            // Console.WriteLine(dg.DynamicInvoke()); // 调用委托
+
+            //var lambda1 = Expression.Lambda(
+            //    Expression.Add(
+            //        Expression.Constant(2, typeof(int)),
+            //        Expression.Constant(3, typeof(int))
+            //        )
+            //    );
+
+            // 生成树
+            // 创建表达式树时创建的其他两个节点类型：参数节点和方法调用节点
+            Expression<Func<double, double, double>> distanceCalc =
+                (x, y) => Math.Sqrt(x * x + y * y);
+            // 创建参数
+            var xPara = Expression.Parameter(typeof(double), "x");
+            var yPara = Expression.Parameter(typeof(double), "y");
+            // 创建乘法和加法表达式
+            var xSqu = Expression.Multiply(xPara, xPara); // Multiply 乘法运算符
+            var ySqu = Expression.Multiply(yPara, yPara);
+
+
+            var sum1 = Expression.Add(xSqu, ySqu);
+            // 为调用 Math.Sqrt 创建方法调用表达式
+            var sqrtMethod = typeof(Math).GetMethod("Sqrt", new[] { typeof(double) });
+            var distance = Expression.Call(sqrtMethod, sum1);
+            // 将方法调用放入 Lambda 表达式, 并确保定义Lambda表达式参数
+            var distanceLambda = Expression.Lambda(
+               distance,
+               xPara,
+               yPara
+                );
+
+            //Delegate dg1 = distanceLambda.Compile(); // 编译表达式树得到委托
+            //var invo = dg1.DynamicInvoke(1, 2);       // 调用委托
+            //Console.WriteLine(invo);
+
+
+            // 深度生成代码
+            Func<int, int> factorialFunc = (n) =>
+             {
+                 var res = 1;
+                 while (n > 1)
+                 {
+                     res = res * n;
+                     n--;
+                 }
+                 return res;
+             };
+
+            var nArgument = Expression.Parameter(typeof(int), "n");
+            var result = Expression.Variable(typeof(int), "result");
+            // 创建表示返回值的标签
+            LabelTarget lable = Expression.Label(typeof(int));
+
+            var initializeResult = Expression.Assign(result, Expression.Constant(1));
+
+            // 这是执行乘法内部块，并且减去 n 的值
+            var block = Expression.Block(
+                    Expression.Assign(result,
+                        Expression.Multiply(result, nArgument)),
+                    Expression.PostDecrementAssign(nArgument)
+                );
+
+            // 创建一个方法主体
+            BlockExpression body = Expression.Block(
+                new[] { result },
+                initializeResult,
+                Expression.Loop(
+                    Expression.IfThenElse(
+                        Expression.GreaterThan(nArgument, Expression.Constant(1)),
+                        block,
+                        Expression.Break(lable, result)
+                        ),
+                        lable)
+                  );
+
+
+            var lambda5 = Expression.Lambda(body, nArgument); // 创建 Lambda 表达式
+            Delegate dg5 = lambda5.Compile();
+            //Console.WriteLine(dg5.DynamicInvoke(3));
+
+            int it = 42;
+            System.Type type = it.GetType();
+            //System.Console.WriteLine(type);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            Console.WriteLine();
+
 
         }
+
+
+
+
+
+
+        public void TestMethod(int ipt)
+        {
+            int j = 0;
+            del = () => { j = 10; return j > ipt; };
+            del2 = (x) => { return x == j; };
+            Console.WriteLine("j={0}", j);
+            bool boolResult = del();
+            Console.WriteLine("j={0},b={1}", j, boolResult);
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+        private static async Task Begin()
+        {
+            for (int c = 2; c <= 5; c++)
+            {
+                var result = await showSquares(c);
+                Console.WriteLine("{0}+{0}={1}", c, result);
+            }
+        }
+
+        private static async Task<int> showSquares(int number)
+        {
+            return await Task.Factory.StartNew(x => (int)x * (int)x, number);
+        }
+
+
+
         public void exmple()
         {
             // https:// code.msdn.microsoft.com/101-LINQ-Samples-3fb9811b
@@ -474,6 +714,9 @@ namespace ConsoleApp.Linq
             return avg > 0 ? (int)avg / 10 : 0;
         }
     }
+
+
+
 
     //public static class CustomSequenceOperators
     //{

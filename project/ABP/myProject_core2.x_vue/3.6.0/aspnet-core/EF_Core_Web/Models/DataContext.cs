@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using EF_Core_Web.Models.cengJi;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 
@@ -125,12 +126,16 @@ namespace EF_Core_Web.Models
             // 全局过滤器
 
             // modelBuilder.Entity<School>().Property<string>("TenantId").HasField("_tenantId");
-          //  modelBuilder.Entity<School>().HasQueryFilter(p => EF.Property<int>(p, "Id") == 1);
+            //  modelBuilder.Entity<School>().HasQueryFilter(p => EF.Property<int>(p, "Id") == 1);
 
         }
 
 
 
+
+
+        public DbSet<A> A { get; set; }
+        public DbSet<B> B { get; set; }
         public DbSet<Person> Person { get; set; }
         public DbSet<StudentParent> StudentParent { get; set; }
         public DbSet<Student> Student { get; set; }
